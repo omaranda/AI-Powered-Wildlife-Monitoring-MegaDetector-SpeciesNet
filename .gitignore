@@ -2,6 +2,7 @@
 .env
 .env.local
 .env.*.local
+.env.docker
 
 # Next.js
 dashboard/.next/
@@ -16,6 +17,10 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 yarn.lock
+
+# Service Manager
+.pids/
+.logs/
 
 # Python
 __pycache__/
@@ -92,6 +97,9 @@ credentials.json
 # Database
 *.sql.gz
 *.dump
+
+# Docker
+.env.docker
 
 # Misc
 .cache/
