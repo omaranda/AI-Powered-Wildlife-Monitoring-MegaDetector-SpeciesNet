@@ -119,6 +119,32 @@ class DatabaseManager:
             logger.info(f"Inserted image record with ID: {image_id}")
             return image_id
 
+    def update_image_urls(self, image_id: int, urls: Dict[str, str]):
+        """
+        Update image record with optimized version URLs
+
+        Args:
+            image_id: Image record ID
+            urls: Dictionary of size_name -> URL (thumbnail, preview, full)
+        """
+        query = """
+            UPDATE images
+            SET thumbnail_url = %s,
+                preview_url = %s,
+                full_url = %s,
+                updated_at = NOW()
+            WHERE id = %s
+        """
+
+        with self.get_cursor() as cursor:
+            cursor.execute(query, (
+                urls.get('thumbnail'),
+                urls.get('preview'),
+                urls.get('full'),
+                image_id
+            ))
+            logger.info(f"Updated optimized URLs for image {image_id}")
+
     def update_image_status(
         self,
         image_id: int,

@@ -334,8 +334,6 @@ Apache License 2.0 - see [LICENSE](LICENSE) file for details.
 ## Support
 
 For questions or issues:
-- Create an issue in GitHub
-- Email: support@example.com
 - Documentation: [docs/](docs/)
 
 ## Acknowledgments

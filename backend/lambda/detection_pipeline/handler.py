@@ -18,6 +18,9 @@ from megadetector import MegaDetector
 from speciesnet import SpeciesNet
 from database import DatabaseManager
 from utils import extract_exif_data, calculate_image_quality
+import sys
+sys.path.append('/opt/python')
+from image_optimizer import ImageOptimizer
 
 # Configure logging
 logger = logging.getLogger()
@@ -40,11 +43,12 @@ SPECIESNET_THRESHOLD = float(os.environ.get('SPECIESNET_THRESHOLD', '0.5'))
 megadetector = None
 speciesnet = None
 db_manager = None
+image_optimizer = None
 
 
 def init_models():
     """Initialize ML models and database connection"""
-    global megadetector, speciesnet, db_manager
+    global megadetector, speciesnet, db_manager, image_optimizer
 
     if megadetector is None:
         logger.info("Initializing MegaDetector...")
@@ -68,6 +72,10 @@ def init_models():
             user=DB_USER,
             password=DB_PASSWORD
         )
+
+    if image_optimizer is None:
+        logger.info("Initializing image optimizer...")
+        image_optimizer = ImageOptimizer(s3_client=s3_client)
 
 
 def parse_s3_path(s3_key: str) -> Dict[str, str]:
@@ -182,6 +190,22 @@ def process_image(event: Dict[str, Any]) -> Dict[str, Any]:
 
         image_id = db_manager.insert_image(image_record)
         logger.info(f"Image record created with ID: {image_id}")
+
+        # Generate optimized web versions in parallel
+        logger.info("Generating optimized web versions...")
+        try:
+            optimized_urls = image_optimizer.process_image_for_web(
+                bucket=s3_bucket,
+                key=s3_key,
+                make_public=False  # Use pre-signed URLs for security
+            )
+            logger.info(f"Generated {len(optimized_urls)} optimized versions")
+
+            # Update image record with optimized URLs
+            db_manager.update_image_urls(image_id, optimized_urls)
+        except Exception as e:
+            logger.warning(f"Image optimization failed (non-critical): {str(e)}")
+            # Continue processing even if optimization fails
 
         # Run MegaDetector
         logger.info("Running MegaDetector...")

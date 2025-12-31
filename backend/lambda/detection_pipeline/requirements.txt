@@ -6,3 +6,6 @@ boto3==1.34.0
 numpy==1.24.3
 scipy==1.11.4
 opencv-python-headless==4.8.1.78
+
+# Note: Pillow is already included above for image optimization
+# ImageOptimizer uses PIL (Pillow) for compression and resizing
