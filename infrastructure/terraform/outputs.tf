@@ -1,3 +1,8 @@
+# Camera Trap Species Detection Platform - Terraform Outputs
+#
+# Copyright (c) 2025 Omar Miranda
+# SPDX-License-Identifier: Apache-2.0
+
 output "rds_endpoint" {
   description = "RDS instance endpoint"
   value       = aws_db_instance.main.endpoint

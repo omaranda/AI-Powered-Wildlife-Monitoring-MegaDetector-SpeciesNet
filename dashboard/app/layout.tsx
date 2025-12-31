@@ -1,3 +1,10 @@
+/**
+ * Camera Trap Species Detection Platform - Root Layout
+ *
+ * Copyright (c) 2025 Omar Miranda
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";

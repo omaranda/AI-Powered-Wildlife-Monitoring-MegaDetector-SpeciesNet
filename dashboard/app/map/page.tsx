@@ -1,3 +1,10 @@
+/**
+ * Camera Trap Species Detection Platform - Map View Page
+ *
+ * Copyright (c) 2025 Omar Miranda
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 'use client'
 
 import { useEffect, useState, useRef } from 'react'

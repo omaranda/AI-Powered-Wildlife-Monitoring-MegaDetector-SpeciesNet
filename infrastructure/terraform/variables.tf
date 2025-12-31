@@ -1,3 +1,8 @@
+# Camera Trap Species Detection Platform - Terraform Variables
+#
+# Copyright (c) 2025 Omar Miranda
+# SPDX-License-Identifier: Apache-2.0
+
 variable "aws_region" {
   description = "AWS region for resources"
   type        = string

@@ -1,3 +1,10 @@
+/**
+ * Camera Trap Species Detection Platform - Next.js Configuration
+ *
+ * Copyright (c) 2025 Omar Miranda
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {

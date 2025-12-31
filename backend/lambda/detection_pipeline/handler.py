@@ -1,6 +1,9 @@
 """
 Camera Trap Species Detection Pipeline
 Lambda function for processing camera trap images with MegaDetector and SpeciesNet
+
+Copyright (c) 2025 Omar Miranda
+SPDX-License-Identifier: Apache-2.0
 """
 
 import json

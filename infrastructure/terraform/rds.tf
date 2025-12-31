@@ -1,3 +1,8 @@
+# Camera Trap Species Detection Platform - RDS Configuration
+#
+# Copyright (c) 2025 Omar Miranda
+# SPDX-License-Identifier: Apache-2.0
+
 # Random password for RDS
 resource "random_password" "db_password" {
   length  = 32

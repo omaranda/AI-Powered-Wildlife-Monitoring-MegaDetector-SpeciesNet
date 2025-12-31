@@ -1,6 +1,9 @@
 """
 PostgreSQL Database Manager for Species Detection Platform
 Handles all database operations for images, detections, species, and locations
+
+Copyright (c) 2025 Omar Miranda
+SPDX-License-Identifier: Apache-2.0
 """
 
 import psycopg2

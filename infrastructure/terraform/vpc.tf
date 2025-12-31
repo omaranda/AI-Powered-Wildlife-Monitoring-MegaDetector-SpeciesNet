@@ -1,3 +1,8 @@
+# Camera Trap Species Detection Platform - VPC Configuration
+#
+# Copyright (c) 2025 Omar Miranda
+# SPDX-License-Identifier: Apache-2.0
+
 # VPC for RDS and Lambda
 resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"

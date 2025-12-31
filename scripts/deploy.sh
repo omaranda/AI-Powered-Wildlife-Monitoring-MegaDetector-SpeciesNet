@@ -1,4 +1,9 @@
 #!/bin/bash
+# Camera Trap Species Detection Platform - Automated Deployment Script
+#
+# Copyright (c) 2025 Omar Miranda
+# SPDX-License-Identifier: Apache-2.0
+
 set -e
 
 echo "========================================"

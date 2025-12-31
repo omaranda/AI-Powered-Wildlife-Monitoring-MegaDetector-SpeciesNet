@@ -1,6 +1,9 @@
 """
 MegaDetector v5.0 Integration
 YOLOv5-based model for detecting animals, people, and vehicles in camera trap images
+
+Copyright (c) 2025 Omar Miranda
+SPDX-License-Identifier: Apache-2.0
 """
 
 import torch

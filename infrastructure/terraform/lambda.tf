@@ -1,3 +1,8 @@
+# Camera Trap Species Detection Platform - Lambda Configuration
+#
+# Copyright (c) 2025 Omar Miranda
+# SPDX-License-Identifier: Apache-2.0
+
 # Lambda IAM Role
 resource "aws_iam_role" "lambda" {
   name = "${var.project_name}-lambda-role"

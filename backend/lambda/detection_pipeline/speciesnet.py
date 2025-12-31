@@ -2,6 +2,9 @@
 SpeciesNet (iNaturalist) Integration
 Species classification model trained on iNaturalist dataset
 Supports 5,000+ wildlife species
+
+Copyright (c) 2025 Omar Miranda
+SPDX-License-Identifier: Apache-2.0
 """
 
 import torch

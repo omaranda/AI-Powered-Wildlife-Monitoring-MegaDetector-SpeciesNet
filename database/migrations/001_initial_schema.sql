@@ -1,5 +1,8 @@
 -- Camera Trap Species Detection Database Schema
 -- PostgreSQL 15+
+--
+-- Copyright (c) 2025 Omar Miranda
+-- SPDX-License-Identifier: Apache-2.0
 
 -- Enable required extensions
 CREATE EXTENSION IF NOT EXISTS postgis;

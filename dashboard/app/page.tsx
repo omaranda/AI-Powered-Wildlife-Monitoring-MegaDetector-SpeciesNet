@@ -1,3 +1,10 @@
+/**
+ * Camera Trap Species Detection Platform - Dashboard Page
+ *
+ * Copyright (c) 2025 Omar Miranda
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { Suspense } from 'react'
 import Link from 'next/link'
 

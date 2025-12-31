@@ -1,3 +1,8 @@
+# Camera Trap Species Detection Platform - Terraform Main Configuration
+#
+# Copyright (c) 2025 Omar Miranda
+# SPDX-License-Identifier: Apache-2.0
+
 terraform {
   required_version = ">= 1.6"
 
